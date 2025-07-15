@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   const { searchword } = req.query;
   const serviceKey = encodeURIComponent(process.env.SERVICE_KEY); // URL 인코딩된 키
 
-  const url = `http://apis.data.go.kr/1140100/minAnalsInfoView5/minSimilarInfo5?serviceKey=${serviceKey}&retCount=20&minScore=10&startPos=1&dataType=json&target=qna_origin${searchword ? `&searchword=${encodeURIComponent(searchword)}` : ''
+  const url = `http://apis.data.go.kr/1140100/minAnalsInfoView5/minSimilarInfo5?serviceKey=${serviceKey}&retCount=20&minScore=30&startPos=1&dataType=json&target=qna_origin${searchword ? `&searchword=${encodeURIComponent(searchword)}` : ''
   }`;
 
 	try {
