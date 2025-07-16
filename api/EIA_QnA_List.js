@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
   const params = [
     `serviceKey=${serviceKey}`,
     `firstIndex=1`,
-    `recordCountPerPage=1000`,
+    `recordCountPerPage=50`,
     `type=3`,
     `regFrom=20200101`,
     `regTo=${regTo}`
