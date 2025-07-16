@@ -4,7 +4,9 @@ const axios = require('axios');
 module.exports = async (req, res) => {
   const { keyword } = req.query;
   // const serviceKey = encodeURIComponent(process.env.SERVICE_KEY);
-  const serviceKey = encodeURIComponent('gl44IFQw8C271zsqN8GL5vBnm%2Fb9Fv8KVY7bvyrKJeApitaZawOwcmXMe3PIumRHLvN2Arg5cWK%2BBgnapNWxOQ%3D%3D'); // URL 인코딩된 키
+  const serviceKey = 'gl44IFQw8C271zsqN8GL5vBnm/b9Fv8KVY7bvyrKJeApitaZawOwcmXMe3PIumRHLvN2Arg5cWK+BgnapNWxOQ==';
+  const encodedKey = encodeURIComponent(serviceKey);
+  
   // 오늘 날짜 (YYYYMMDD)
   const today = new Date();
   const yyyy = today.getFullYear();
@@ -14,7 +16,7 @@ module.exports = async (req, res) => {
 
   // 요청 파라미터 구성
   const params = [
-    `serviceKey=${serviceKey}`,
+    `serviceKey=${encodedKey}`,
     `firstIndex=1`,
     `recordCountPerPage=50`,
     `type=3`,
