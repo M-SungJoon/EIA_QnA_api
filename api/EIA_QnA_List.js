@@ -17,6 +17,7 @@ module.exports = async (req, res) => {
     `serviceKey=${serviceKey}`,
     `firstIndex=1`,
     `recordCountPerPage=20`,
+    `type=3`,
     `regFrom=20200101`,
     `regTo=${regTo}`
   ];
@@ -27,8 +28,15 @@ module.exports = async (req, res) => {
   const url = `http://apis.data.go.kr/1140100/CivilPolicyQnaService/PolicyQnaList?${params.join('&')}`;
 
   try {
-    const response = await axios.get(url);  // 응답은 JSON이라고 가정
-    res.status(200).json(response.data);   // XML 파싱 불필요
+      const response = await axios.get(url, {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115.0.0.0 Safari/537.36',
+        'Accept-Language': 'ko-KR,ko;q=0.9',
+        'Connection': 'keep-alive'
+      }
+    });
+    res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
