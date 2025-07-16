@@ -3,7 +3,7 @@ const axios = require('axios');
 // Vercel용 API 라우트 핸들러
 module.exports = async (req, res) => {
   const { keyword } = req.query;
-  const serviceKey = encodeURIComponent(process.env.SERVICE_KEY);
+  // const serviceKey = encodeURIComponent(process.env.SERVICE_KEY);
 
   // 오늘 날짜 (YYYYMMDD)
   const today = new Date();
@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
 
   // 요청 파라미터 구성
   const params = [
-    `serviceKey=${serviceKey}`,
+    `serviceKey=gl44IFQw8C271zsqN8GL5vBnm%2Fb9Fv8KVY7bvyrKJeApitaZawOwcmXMe3PIumRHLvN2Arg5cWK%2BBgnapNWxOQ%3D%3D`,
     `firstIndex=1`,
     `recordCountPerPage=50`,
     `type=3`,
