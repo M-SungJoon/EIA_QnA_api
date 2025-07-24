@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
     params.push(`keyword=${encodeURIComponent(keyword)}`);
   }
 
-  const url = `http://apis.data.go.kr/1140100/CivilPolicyQnaService/PolicyQnaList?${params.join('&')}`;
+  const url = `https://apis.data.go.kr/1140100/CivilPolicyQnaService/PolicyQnaList?${params.join('&')}`;
 
   try {
       const response = await axios.get(url, {
