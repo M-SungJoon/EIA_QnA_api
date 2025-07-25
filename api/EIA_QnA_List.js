@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     const { keyword } = req.query;
 
     // 로컬 개발용 API 키 (환경변수 대신 직접 입력)
-    const serviceKey = 'gl44IFQw8C271zsqN8GL5vBnm/b9Fv8KVY7bvyrKJeApitaZawOwcmXMe3PIumRHLvN2Arg5cWK+BgnapNWxOQ==';
+    const serviceKey = process.env.SERVICE_KEY; // URL 인코딩된 키
 
     // 오늘 날짜 (YYYYMMDD)
     const today = new Date();
