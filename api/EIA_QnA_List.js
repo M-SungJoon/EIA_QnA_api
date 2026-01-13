@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
       serviceKey,
       firstIndex: 1,
       recordCountPerPage: 50,
-      type: 3,
+      type: 2,
       regFrom: '20200101',
       regTo,
       ...(keyword && { keyword })
